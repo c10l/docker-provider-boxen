@@ -1,16 +1,15 @@
-# Ubuntu Precise base box
+# CentOS 6.5 base box
 
 This folder contains an example of a Dockerfile that builds an image ready for
-usage with Vagrant. Please check out the [source](boxes/precise/Dockerfile)
+usage with Vagrant. Please check out the [source](centos/Dockerfile)
 for more information on building your own.
 
 To turn this into a box:
 
 ```
-docker build -t myuser/vagrant-ubuntu:precise .
-docker push myuser/vagrant-ubuntu:precise
-sed 's/IMAGE/myuser\/vagrant-ubuntu:precise/' Vagrantfile.sample > Vagrantfile
-tar cvzf precise.box ./metadata.json ./Vagrantfile
+docker build -t cassianoleal/vagrant-centos:6.5_nocm .
+docker push cassianoleal/vagrant-centos
+tar cvzf centos65_nocm.box ./metadata.json ./Vagrantfile
 ```
 
 This box works by using Vagrant's built-in `Vagrantfile` merging to setup defaults
